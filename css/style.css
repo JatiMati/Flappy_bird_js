@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapBack{
+    position: relative;
+    
+    width: 288px ;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.backgroundDiv{
+    height: 100%;
+    width: 100%;
+    background: url("../objects/background-day.png") repeat-x;
+
+    animation: bgMove 6s  infinite linear running;
+    animation: bgMove 6s  infinite linear paused;
+
+    filter: grayscale(100%);
+    transform: scale(120%);
+    transform-origin: center;
+    transition: transform 10s, filter 1s;
+}
+
+.bird{
+    position: absolute;
+    transform: translate(-50%,-50%) rotate(0deg);
+    top: 256px;
+    left: 50%;
+    transition:0.2s;
+
+    z-index: 2;
+}
+
+.gameOver{
+    position: absolute;
+    /* transform: scale(120%); */
+    top: 230px;
+    left: 45px;
+    transition: transform 10s;
+    z-index: 1;
+    animation:popGameOver 2s forwards, moveOut 1s 2s forwards;
+}
+
+.playAgain{
+    position: absolute;
+    /* transform: scale(120%); */
+    top: 600px;
+    left: 45px;
+    transition: transform 10s;
+    z-index: 1;
+    animation: moveIn 1s 2s forwards, jump 2s 3s infinite;
+
+}
+
+@keyframes bgMove {
+    from{
+        background-position-x: 0;
+    }
+    to{
+        background-position-x: -288px;
+    }
+}
+
+@keyframes popGameOver {
+0%{
+    transform: scale(0%);
+    top: 400px;
+}
+30%{
+    transform: scale(120%);
+    top: 200px;
+}
+
+100%{
+    transform: scale(90%);
+    top: 230px;
+}  
+}
+
+@keyframes moveOut{
+    from{
+        top: 230px; 
+    }
+    to{
+        top: -245px;
+    }
+}
+
+@keyframes moveIn {
+    from{
+        top: 600px;
+    }
+    to{
+        top: 125px;
+    }
+}
+@keyframes jump {
+    0%{
+        transform: scale(100%);
+    }
+    50%{
+        transform: scale(105%);
+    }
+    100%{
+        transform: scale(100%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.wrapBack {
+    width: 288px;
+    height: 100vh; 
+    overflow: hidden;
+}
+
+.backgroundDiv {
+    width: 100%;
+    height: 100%;
+    background: url("../objects/background-day.png") repeat-x;
+    animation: scrollBackground 7s linear infinite;
+}
+
+
+@keyframes scrollBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -288px 0; 
+    }
+} */
